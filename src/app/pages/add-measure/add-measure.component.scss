@@ -1,0 +1,78 @@
+@import "../../../main-style";
+
+
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+  width: 100%;
+
+  background-color: $charcoal;
+
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 300px;
+  padding: 20px;
+  border-radius: 8px;
+
+  background-color: lighten($charcoal, 8%);
+
+  h1 {
+    color: $maize_crayola;
+  }
+
+}
+
+.container {
+
+  display: flex;
+  flex-direction: column;
+
+  .field {
+    width: 100%;
+    height: 90px;
+
+    .mat-mdc-form-field {
+      width: 100%;
+    }
+
+    input {
+      width: 100%;
+      height: 30px;
+
+      padding: 0;
+      margin: 0;
+      margin-top: 20px;
+
+
+    }
+    &:last-child {
+      margin-bottom: 20px;
+    }
+  }
+
+}
+
+.btn-group {
+
+  display: flex;
+  justify-content: space-between;
+
+  button:last-child{
+    background-color: $persian_green;
+    color: white;
+  }
+}
+
+
+

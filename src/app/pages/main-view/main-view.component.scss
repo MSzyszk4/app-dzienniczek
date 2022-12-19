@@ -1,0 +1,74 @@
+@import "../../../main-style";
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+  width: 100%;
+
+  background-color: $charcoal;
+
+
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 300px;
+  padding: 20px;
+  border-radius: 8px;
+
+  background-color: lighten($charcoal, 8%);
+
+  h1 {
+    color: $maize_crayola;
+  }
+
+  h2 {
+
+    color: $sandy_brown;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  p {
+    width: 100%;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    .left {
+     float: left;
+      margin-left: 10px;
+
+    }
+
+    .right {
+      float: right;
+      margin-right: 10px;
+    }
+
+    &.good {
+      color: $persian_green;
+    }
+
+    &.bad {
+      color: $burnt_sienna;
+    }
+  }
+
+}
+
+.mtb {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+

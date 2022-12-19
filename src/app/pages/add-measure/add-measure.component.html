@@ -1,0 +1,48 @@
+<section class="section">
+  <div class="box">
+    <h1>Dzienniczek samokontroli</h1>
+
+    <div class="container">
+      <form >
+        <div class="field date">
+
+          <mat-form-field appearance="fill" style="width: 100%;">
+            <mat-label>Wybierz date</mat-label>
+            <input matInput [matDatepicker]="picker" [formControl]="date">
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
+        </div>
+
+        <div class="field time" style="margin-top: 25px;">
+
+          <mat-form-field appearance="fill">
+            <mat-label>Pora dnia</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let time of times" [value]="time.value">
+                {{time.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+        </div>
+
+        <div class="field measure" >
+
+          <mat-form-field >
+            <input matInput type="number" style="padding: 0; margin: 0;" placeholder="Wartość w mg/dl">
+          </mat-form-field>
+
+        </div>
+
+      </form>
+      <div class="btn-group">
+        <button mat-raised-button routerLink="/" >Wstecz</button>
+        <button mat-raised-button >Zatwierdź</button>
+      </div>
+
+    </div>
+
+  </div>
+</section>
