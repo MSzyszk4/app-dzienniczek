@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {FormControl} from '@angular/forms';
+import {FormControl, Validators} from '@angular/forms';
 import {MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS} from '@angular/material-moment-adapter';
 import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
 
@@ -58,5 +58,15 @@ export class AddMeasureComponent {
     {value: 7, viewValue: '3 w nocy'},
     {value: 8, viewValue: 'Po aktywności'},
   ];
+
+  measure = new FormControl('', [Validators.required]);
+
+  getErrorMessage() {
+    if (this.measure.hasError('required')) {
+      return 'You must enter a value';
+    }
+
+    return this.measure.hasError('measure') ? 'Not a valid measure' : '';
+  }
 
 }

@@ -8,19 +8,19 @@
 
           <mat-form-field appearance="fill" style="width: 100%;">
             <mat-label>Wybierz date</mat-label>
-            <input matInput [matDatepicker]="picker" [formControl]="date">
+            <input matInput [matDatepicker]="picker" [formControl]="date" required>
             <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
 
         </div>
 
-        <div class="field time" style="margin-top: 25px;">
+        <div class="field time" >
 
           <mat-form-field appearance="fill">
             <mat-label>Pora dnia</mat-label>
             <mat-select>
-              <mat-option *ngFor="let time of times" [value]="time.value">
+              <mat-option *ngFor="let time of times" [value]="time.value" required>
                 {{time.viewValue}}
               </mat-option>
             </mat-select>
@@ -31,16 +31,17 @@
         <div class="field measure" >
 
           <mat-form-field >
-            <input matInput type="number" style="padding: 0; margin: 0;" placeholder="Wartość w mg/dl">
+            <input matInput type="number" placeholder="Wartość w mg/dl" [formControl]="measure" required >
+            <mat-error *ngIf="measure.invalid">{{getErrorMessage()}}</mat-error>
           </mat-form-field>
 
         </div>
-
+        <div class="btn-group">
+          <button mat-raised-button routerLink="/" >Wstecz</button>
+          <button mat-raised-button type="submit">Zatwierdź</button>
+        </div>
       </form>
-      <div class="btn-group">
-        <button mat-raised-button routerLink="/" >Wstecz</button>
-        <button mat-raised-button >Zatwierdź</button>
-      </div>
+
 
     </div>
 
